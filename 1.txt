@@ -1,0 +1,34 @@
+TODO popuniti odgovorima na pitanja iz problema 1
+1zadatak.
+
+Šta su, kako rade i čemu služe „normalizacija“ i „regularizacija“?
+Normalizacija je tehnika, često primnjiva kao deo pripreme podataka za mašinsko učenje. Cilj normalizacije je da promeni vrednosti numeričkih kolona u skupu podataka bez ikakvih gubitaka (sve podatke stavlja u istu skalu/distribuciju). Normalizacija može da poveća integritet, efikasnost i preciznost podataka.
+Regularizacija je tehinka koja služi za kalibriranje modela tako da spreči overfitting (overfitting - kada model pokuša da hvata i šum tj. neprecizne vrednosti i tako smanjuje efikasnost i preciznost). Regularizacija radi tako što dodaje "kaznu" na funkciju troška.
+
+2. zadatak
+Objasniti razliku između „Precision“ i „Recall“ metrika.
+Precision (pozitivna prediktivna vrednost) označava koliki je udeo relevantnih elemenata u odabranim elementima, dok Recall (osetljivost) označava udeo odabranih elemenata u svim relevantnim elementima. Precision i Recall se prema tome zasnivaju na relevantnosti. Precision se može tumačiti kao merilo kvaliteta, a Recall kao merilo količine. Visok Precision znači da algoritam vraća više relevantnih rezultata od nerelevantnih, a visok Recall znači da algoritam vraća većinu relevantnih rezultata (bez obzira na to da li se vraćaju i nerelevantni).
+Objašnjenje na primeru: Posmatramo 70 urađenih Covid testova. Testovi su vratili 30 pozitivnih, od kojih je 28 relevantnih (2 su lažno pozitivna), a nisu uspeli da vrate dodatnih 5 relevantnih slučaja (lažno negativni). To znači da je Precision 28/30, a Recall 28/33.
+
+2b. Dati primer u kom slučaju nam koja metrika više znači. Kada nam je potrebna veća validost rezultata koristimo Precision, dok Recall koristimo ukoliko nam je bitna kompletnost podataka. Primeri: 1) Imamo website blocker koji omogućava prikazivanje samo "sigurnih" lokacija. U ovom slučaju koristimo Precision jer želimo da blocker bude siguran da je veb lokacija bezbedna, čak iako to znači da će verovatno neke sigurne stranice biti blokirane. 2) Posmatramo situaciju bezbednosti aerodroma. U ovom slučaju želimo da budemo sigurni da je istražen svaki potencijalni bezbednosni rizik, iako to znači da će se verovatno istražiti i veći broj ljudi koji ne predstavljaju opasnost po bezbednost. Ovde koristimo Recall.
+
+3.zadatak
+Navesti 3 primera u kojima izrazito želimo da imamo što manje FP čak i na račun povećanja FN i 3 primera kada važi obrnuto – želimo da imamo što manje FN čak i na račun povećanja broja FP. 
+
+> False Postive:
+Primeri u kojima izrazito zelimo da imamo sto manje False Positive
+
+1) Ne zelimo lazno pozitivan test ukoliko su u pitanju rezultati merenja vrednsoti u zdravstvene svrhe. (Lazno pozitivan test na koronu)
+
+2) Ne zelimo kada se vrsi testiranje na drogu. (Ukoliko se vrsi testiranje unutar neke firme da nas test ispadne lazno pozitivan)
+
+3) Prilikom sudjenja ukoliko osoba bude proglasena krivom, a nevina je.
+
+> False Negative:
+Primeri u kojima izrazito zelimo da imamo sto manje False Negative
+
+1) Prilikom sudjenja ukoliko osoba bude proglasena nevinom, a kriva je.
+
+2) Kontrola kvaliteta u proizvodnji, lazni negativni test u ovoj oblasti znači da neispravna stvar prolazi kroz pukotine.
+
+3) U testiranju softvera, rezultati lazno negativanog testa bi značili da je test dizajniran da uhvati nešto (tj. virus), a nije uspeo.
